@@ -31,7 +31,7 @@ public class FormTests {
         $(".react-datepicker__day--011:not(.react-datepicker__day--outside-month)").click();
         $("#subjectsInput").setValue("Math").pressEnter();
         $(byText("Sports")).click();
-        $("#uploadPicture").uploadFromClasspath("toolsqa.jpg");
+        $("#uploadPicture").uploadFromClasspath("123.jpg");
         $("#currentAddress").setValue("Gogol st.");
         $("#stateCity-label").scrollTo();
         $("#react-select-3-input").val("Uttar Pradesh").pressEnter();
@@ -47,7 +47,7 @@ public class FormTests {
                 text("11 April,1990"),
                 text("Math"),
                 text("Sports"),
-                text("toolsqa.jpg"),
+                text("123.jpg"),
                 text("Gogol st."),
                 text("Uttar Pradesh Agra")
         );
