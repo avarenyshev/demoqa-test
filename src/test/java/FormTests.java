@@ -35,7 +35,6 @@ public class FormTests {
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#uploadPicture").uploadFromClasspath("123.jpg");
         $("#currentAddress").setValue("Gogol st.");
-        $("#stateCity-label").scrollTo();
         $("#react-select-3-input").val("Uttar Pradesh").pressEnter();
         $("#react-select-4-input").val("Agra").pressEnter();
         $("#submit").pressEnter();
