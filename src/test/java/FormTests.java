@@ -32,7 +32,7 @@ public class FormTests {
         $(".react-datepicker__month-select").selectOptionByValue("3");
         $(".react-datepicker__day--011:not(.react-datepicker__day--outside-month)").click();
         $("#subjectsInput").setValue("Math").pressEnter();
-        $(byText("Sports")).click();
+        $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#uploadPicture").uploadFromClasspath("123.jpg");
         $("#currentAddress").setValue("Gogol st.");
         $("#stateCity-label").scrollTo();
