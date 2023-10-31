@@ -17,13 +17,15 @@ public class FormTests {
     Configuration.browserSize = "1920x1080";
     Configuration.holdBrowserOpen = true;
 }
+
+   // $("#genterWrapper").$(byText("Male")).click();
     @Test
     void formtests() {
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue("Bradd");
         $("#lastName").setValue("Pitt");
         $("#userEmail").setValue("brad@pitt.com");
-        $("[for='gender-radio-1']").click();
+        $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("1234567890");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOption("1990");
