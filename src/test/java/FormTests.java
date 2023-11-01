@@ -5,23 +5,22 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class FormTests {
-//$("[for='gender-radio-2']").click();
 
     @BeforeAll
     static void beforeAll() {
     Configuration.pageLoadStrategy = "eager";
     Configuration.browserSize = "1920x1080";
-    Configuration.holdBrowserOpen = true;
+    Configuration.holdBrowserOpen = false;
 }
 
-   // $("#genterWrapper").$(byText("Male")).click();
     @Test
-    void formtests() {
+    void fillFormtests() {
         open("https://demoqa.com/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         $("#firstName").setValue("Bradd");
         $("#lastName").setValue("Pitt");
         $("#userEmail").setValue("brad@pitt.com");
@@ -38,22 +37,29 @@ public class FormTests {
         $("#react-select-3-input").val("Uttar Pradesh").pressEnter();
         $("#react-select-4-input").val("Agra").pressEnter();
         $("#submit").pressEnter();
-
-
-        $(".table-responsive").shouldHave(
-                text("Bradd Pitt"),
-                text("brad@pitt.com"),
-                text("Male"),
-                text("1234567890"),
-                text("11 April,1990"),
-                text("Math"),
-                text("Sports"),
-                text("123.jpg"),
-                text("Gogol st."),
-                text("Uttar Pradesh Agra")
-        );
+//check
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $(".table-responsive").$(byText("Student Name"))
+                .parent().shouldHave(text("Bradd Pitt"));
+        $(".table-responsive").$(byText("Student Email"))
+                .parent().shouldHave(text("brad@pitt.com"));
+        $(".table-responsive").$(byText("Gender"))
+                .parent().shouldHave(text("Male"));
+        $(".table-responsive").$(byText("Mobile"))
+                .parent().shouldHave(text("1234567890"));
+        $(".table-responsive").$(byText("Date of Birth"))
+                .parent().shouldHave(text("11 April,1990"));
+        $(".table-responsive").$(byText("Subjects"))
+                .parent().shouldHave(text("Math"));
+        $(".table-responsive").$(byText("Hobbies"))
+                .parent().shouldHave(text("Sports"));
+        $(".table-responsive").$(byText("Picture"))
+                .parent().shouldHave(text("123.jpg"));
+        $(".table-responsive").$(byText("Address"))
+                .parent().shouldHave(text("Gogol st."));
+        $(".table-responsive").$(byText("State and City"))
+                .parent().shouldHave(text("Uttar Pradesh Agra"));
+        $("#closeLargeModal").click();
     }
 }
-
-//selectOptionByValue("11")
 
