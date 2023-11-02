@@ -16,7 +16,7 @@ class fillFormTests {
 }
 
     @Test
-    void fillFormtests() {
+    void fillFormTests() {
         open("https://demoqa.com/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
