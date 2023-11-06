@@ -6,14 +6,14 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-class fillFormTests {
+class FillFormTests {
 
     @BeforeAll
     static void beforeAll() {
-    Configuration.pageLoadStrategy = "eager";
-    Configuration.browserSize = "1920x1080";
-    Configuration.holdBrowserOpen = false;
-}
+        Configuration.pageLoadStrategy = "eager";
+        Configuration.browserSize = "1920x1080";
+        Configuration.holdBrowserOpen = false;
+    }
 
     @Test
     void fillFormTests() {
