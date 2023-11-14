@@ -21,26 +21,25 @@ class RegistrationWithPageObjectsTests {
 //        executeJavaScript("$('#fixedban').remove()");
 //        executeJavaScript("$('footer').remove()");
         registrationPage.open()
-
         //$("#firstName").setValue("Bradd");
         registrationPage.setFirstName("Bradd")
-
-        $("#lastName").setValue("Pitt");
-        $("#userEmail").setValue("brad@pitt.com");
-
- //       $("#genterWrapper").$(byText("Male")).click();
+        //$("#lastName").setValue("Pitt");
+        registrationPage.setLastName("Pitt")
+        //$("#userEmail").setValue("brad@pitt.com");
+        registrationPage.setUserEmail("brad@pitt.com")
+        //$("#genterWrapper").$(byText("Male")).click();
         registrationPage.setGender("Male")
-
-        $("#userNumber").setValue("1234567890");
-
+        //$("#userNumber").setValue("1234567890");
+        registrationPage.setUserNuber("1234567890");
 //        $("#dateOfBirthInput").click();
 //        $(".react-datepicker__year-select").selectOption("1990");
 //        $(".react-datepicker__month-select").selectOptionByValue("3");
 //        $(".react-datepicker__day--011:not(.react-datepicker__day--outside-month)").click();
         registrationPage.setBirthday("11", "April", "1990")
-
-        $("#subjectsInput").setValue("Math").pressEnter();
-        $("#hobbiesWrapper").$(byText("Sports")).click();
+        //$("#subjectsInput").setValue("Math").pressEnter();
+        registrationPage.setSubjeects("Math");
+        //$("#hobbiesWrapper").$(byText("Sports")).click();
+        registrationPage.sethobbies("Sports");
         $("#uploadPicture").uploadFromClasspath("123.jpg");
         $("#currentAddress").setValue("Gogol st.");
         $("#react-select-3-input").val("Uttar Pradesh").pressEnter();
