@@ -21,9 +21,9 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setUserEmail("brad@pitt.com")
                 .setGender("Male")
                 .setUserNuber("1234567890")
-                .setDateOfBirth("11", "April", "1990");
-        .setSubjeects("Math");
-        .sethobbies("Sports");
+                .setDateOfBirth("11", "April", "1990")
+                .setSubjects("Math")
+                .setHobbies("Sports");
         .setPicture("123.jpg");
         .setAdress("Gogol st.");
         .setState("Uttar Pradesh");
