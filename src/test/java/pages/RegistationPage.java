@@ -7,22 +7,31 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
+
 public class RegistationPage {
 
     private SelenideElement
             firstNameInput = $("#firstName"),
-            lastNameInput = $("#lastname"),
+            lastNameInput = $("#lastName"),
             emailUserInput = $("#userEmail"),
             genderWrapper = $("#genterWrapper"),
             userNumberInput = $("#userNumber"),
             calendarInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
-            hobbiesWrapper = $("#hobbiesWrapper");
+            hobbiesWrapper = $("#hobbiesWrapper"),
+            downloadPicture = $("#uploadPicture"),
+            currentAdressInput = $("#currentAddress"),
+            stateInput = $("#react-select-3-input"),
+            cityInput = $("#react-select-4-input"),
 
-
+    //stateInput = $("#state"),
+            //cityInput = $("#city"),
+            putSubit = $("#submit");
 
 
     CalendarComponent calendarComponent = new CalendarComponent();
+    //AdressComponent adressComponent = new AdressComponent();
+
 
     public RegistationPage openPage() {
         open("https://demoqa.com/automation-practice-form");
@@ -51,11 +60,11 @@ public class RegistationPage {
     }
 
     public RegistationPage setGender(String value) {
-        genderWrapper.$(byText("value")).click();
+        genderWrapper.$(byText(value)).click();
         return this;
     }
 
-    public RegistationPage setUserNuber(String value) {
+    public RegistationPage setUserNumber(String value) {
         (userNumberInput).setValue(value);
         return this;
     }
@@ -70,18 +79,42 @@ public class RegistationPage {
         (subjectsInput).setValue(value).pressEnter();
         return this;
     }
+
     public RegistationPage setHobbies(String value) {
-        (hobbiesWrapper).$(byText("value")).click();
+        (hobbiesWrapper).$(byText(value)).click();
         return this;
     }
 
-    public RegistationPage setPicture(String)
-
-    public RegistationPage checkResult(String key, String value) {
-        (".table-responsive").$(byText(key)).parent().shouldHave(text(value));
+    public RegistationPage setPicture(String fileName) {
+        (downloadPicture).uploadFromClasspath(fileName);
+        return this;
     }
 
+    public RegistationPage setCurrentAdress(String value) {
+        (currentAdressInput).setValue(value);
+        return this;
+    }
+
+    public RegistationPage setStateAndCity (String state, String city) {
+        stateInput.setValue(state).pressEnter();
+        cityInput.setValue(city).pressEnter();
+        return this;
+    }
+
+//    public RegistationPage setCity(String value) {
+//        cityInput.click();
+//        cityInput.val(value).pressEnter();
+//        return null;
+    }
+
+//    public RegistationPage putSubmit(String press) {
+//        (putSubit).pressEnter();
+//        return null;
+//    }
+    //  public RegistationPage setPicture(String);
+
+    //public RegistationPage checkResult(String key, String value) {
+        //(".table-responsive").$(byText(key)).parent().shouldHave(text(value));
 
 
 
-}
