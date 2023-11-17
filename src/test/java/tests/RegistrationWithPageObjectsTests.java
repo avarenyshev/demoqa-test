@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistationPage;
+import pages.components.ResultComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -12,7 +13,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class RegistrationWithPageObjectsTests extends TestBase {
 
     RegistationPage registationPage = new RegistationPage();
-
     @Test
     void fillFormTests() {
         registationPage.openPage()
@@ -30,6 +30,13 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 //.setCity("Agra");
         $("#submit").pressEnter();
 //check
+        RegistationPage.checkResult("Student name","Bradd Pitt");
+
+//        checkResult.checkOpenModalDialog();
+//        checkResult.("Student Name", )
+
+
+
 //        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         //registrationPage.checkFormAppears()
 

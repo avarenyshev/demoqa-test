@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
+import pages.components.ResultComponent;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -24,12 +25,16 @@ public class RegistationPage {
             stateInput = $("#react-select-3-input"),
             cityInput = $("#react-select-4-input"),
 
+
+
     //stateInput = $("#state"),
-            //cityInput = $("#city"),
-            putSubit = $("#submit");
+    //cityInput = $("#city"),
+    putSubit = $("#submit");
 
 
     CalendarComponent calendarComponent = new CalendarComponent();
+    ResultComponent tableComponent = new ResultComponent();
+
     //AdressComponent adressComponent = new AdressComponent();
 
 
@@ -95,26 +100,22 @@ public class RegistationPage {
         return this;
     }
 
-    public RegistationPage setStateAndCity (String state, String city) {
+    public RegistationPage setStateAndCity(String state, String city) {
         stateInput.setValue(state).pressEnter();
         cityInput.setValue(city).pressEnter();
         return this;
     }
-
-//    public RegistationPage setCity(String value) {
-//        cityInput.click();
-//        cityInput.val(value).pressEnter();
-//        return null;
+    public RegistationPage checkResult(String key, String value) {
+    tableComponent.checkTableResult(key, value);
+    return this;
     }
+}
 
-//    public RegistationPage putSubmit(String press) {
-//        (putSubit).pressEnter();
-//        return null;
-//    }
-    //  public RegistationPage setPicture(String);
 
-    //public RegistationPage checkResult(String key, String value) {
-        //(".table-responsive").$(byText(key)).parent().shouldHave(text(value));
+
+
+//public RegistationPage checkResult(String key, String value) {
+//(".table-responsive").$(byText(key)).parent().shouldHave(text(value));
 
 
 
