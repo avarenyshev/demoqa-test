@@ -30,7 +30,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 //.setCity("Agra");
         $("#submit").pressEnter();
 //check
-        RegistationPage.checkResult("Student name","Bradd Pitt");
+        registationPage.checkResult("Student Name","Bradd Pitt");
 
 //        checkResult.checkOpenModalDialog();
 //        checkResult.("Student Name", )
