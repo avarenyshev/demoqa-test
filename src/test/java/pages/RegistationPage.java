@@ -64,7 +64,7 @@ public class RegistationPage {
     }
 
     public RegistationPage setUserNumber(String value) {
-        (userNumberInput).setValue(value);
+        userNumberInput.setValue(value);
         return this;
     }
 
@@ -75,22 +75,22 @@ public class RegistationPage {
     }
 
     public RegistationPage setSubjects(String value) {
-        (subjectsInput).setValue(value).pressEnter();
+        subjectsInput.setValue(value).pressEnter();
         return this;
     }
 
     public RegistationPage setHobbies(String value) {
-        (hobbiesWrapper).$(byText(value)).click();
+        hobbiesWrapper.$(byText(value)).click();
         return this;
     }
 
     public RegistationPage setPicture(String fileName) {
-        (downloadPicture).uploadFromClasspath(fileName);
+        downloadPicture.uploadFromClasspath(fileName);
         return this;
     }
 
     public RegistationPage setCurrentAdress(String value) {
-        (currentAdressInput).setValue(value);
+        currentAdressInput.setValue(value);
         return this;
     }
 
