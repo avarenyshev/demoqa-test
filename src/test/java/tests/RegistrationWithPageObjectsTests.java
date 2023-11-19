@@ -57,8 +57,9 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     void negativeTest() {
         registationPage.openPage()
                 .pressEnter()
+                //check
                 .negCheck();
-//check
+
 
 
     }

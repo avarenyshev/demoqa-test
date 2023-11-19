@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistationPage {
 
-    private SelenideElement
+    private final SelenideElement
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             emailUserInput = $("#userEmail"),
@@ -43,18 +43,18 @@ public class RegistationPage {
     }
 
     public RegistationPage setFirstName(String value) {
-        (firstNameInput).setValue(value);
+        firstNameInput.setValue(value);
 
         return this;
     }
 
     public RegistationPage setLastName(String value) {
-        (lastNameInput).setValue(value);
+        lastNameInput.setValue(value);
         return this;
     }
 
     public RegistationPage setUserEmail(String value) {
-        (emailUserInput).setValue(value);
+        emailUserInput.setValue(value);
         return this;
     }
 
