@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.ResultComponent;
@@ -24,23 +25,16 @@ public class RegistationPage {
             currentAdressInput = $("#currentAddress"),
             stateInput = $("#react-select-3-input"),
             cityInput = $("#react-select-4-input"),
+            putSubit = $("#submit");
 
 
-
-    //stateInput = $("#state"),
-    //cityInput = $("#city"),
-    putSubit = $("#submit");
 
 
     CalendarComponent calendarComponent = new CalendarComponent();
     ResultComponent tableComponent = new ResultComponent();
 
-    //AdressComponent adressComponent = new AdressComponent();
-
-
     public RegistationPage openPage() {
         open("https://demoqa.com/automation-practice-form");
-        //$(".practice-form-wrapper").shouldHave(text("Student Registration"));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
@@ -105,17 +99,27 @@ public class RegistationPage {
         cityInput.setValue(city).pressEnter();
         return this;
     }
-    public RegistationPage checkResult(String key, String value) {
-    tableComponent.checkTableResult(key, value);
-    return this;
+
+    public RegistationPage pressEnter() {
+        putSubit.pressEnter();
+        return this;
     }
+
+    public RegistationPage checkResult(String key, String value) {
+        tableComponent.checkTableResult(key, value);
+        return this;
+    }
+
+    public RegistationPage negCheck() {
+        firstNameInput.shouldHave(Condition.cssValue("border-color", "rgb(220, 53, 69)"));
+        lastNameInput.shouldHave(Condition.cssValue("border-color", "rgb(220, 53, 69)"));
+        userNumberInput.shouldHave(Condition.cssValue("border-color", "rgb(220, 53, 69)"));
+        return this;
+
+    }
+
 }
 
-
-
-
-//public RegistationPage checkResult(String key, String value) {
-//(".table-responsive").$(byText(key)).parent().shouldHave(text(value));
 
 
 
