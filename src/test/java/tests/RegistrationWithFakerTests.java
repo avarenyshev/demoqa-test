@@ -1,19 +1,23 @@
 package tests;
+
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import pages.RegistationPage;
+import utils.RandomUtils;
 
 import java.util.Locale;
 
 public class RegistrationWithFakerTests extends TestBase {
 
     RegistationPage registationPage = new RegistationPage();
+    TestData testData = new TestData();
+    RandomUtils randomUtils = new RandomUtils();
+    Faker faker = new Faker();
 
     @Test
     void fillFormTests() {
-        Faker faker = new Faker(new Locale("es"));
         registationPage.openPage()
-                .setFirstName("Bradd")
+                .setFirstName("firstName")
                 .setLastName("Pitt")
                 .setUserEmail("brad@pitt.com")
                 .setGender("Male")
@@ -63,7 +67,6 @@ public class RegistrationWithFakerTests extends TestBase {
                 .pressEnter()
                 //check
                 .negCheck();
-
 
 
     }
