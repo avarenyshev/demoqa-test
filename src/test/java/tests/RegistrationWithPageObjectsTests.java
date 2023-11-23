@@ -5,6 +5,7 @@ import pages.RegistationPage;
 public class RegistrationWithPageObjectsTests extends TestBase {
 
     RegistationPage registationPage = new RegistationPage();
+    TestData testData = new TestData();
 
     @Test
     void fillFormTests() {
