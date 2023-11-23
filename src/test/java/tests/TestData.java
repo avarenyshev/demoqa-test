@@ -1,9 +1,6 @@
 package tests;
 
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.Test;
-
-import java.util.Date;
 import java.util.Locale;
 
 public class TestData {
@@ -14,7 +11,7 @@ public class TestData {
             lastName = faker.name().lastName(),
             genderRandom = faker.options().option("Male", "Female", "Other"),
             userNumber = faker.phoneNumber().subscriberNumber(10),
-            dayRandom = String.valueOf(faker.number().numberBetween(1, 28)),
+            dayRandom = String.format("%02d" , faker.number().numberBetween(1, 28)),
             monthRandom = faker.options().option("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"),
             yearRandom = String.valueOf(faker.number().numberBetween(1990, 2005)),
             userEmail = faker.internet().emailAddress(),
