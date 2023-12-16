@@ -2,26 +2,30 @@ plugins {
     id 'java-library'
     id("io.qameta.allure") version "2.11.2"
 }
-def allureVersion  = "2.21.0"
+def allureVersion = "2.21.0",
+    selenideVersion = "6.19.1"
 
-allure {
-    report {
-        version.set(allureVersion)
-    }
-    adapter{
-        aspectjWeaver.set(true)
-        frameworks {
-            juinit5 {
-                adapterVersion.set(allureVersion)
+
+allure
+        {
+            report {
+                version.set(allureVersion)
+            }
+            adapter {
+                aspectjWeaver.set(true)
+                frameworks {
+                    juinit5 {
+                        adapterVersion.set(allureVersion)
+                    }
+                }
             }
         }
-    }
-}
 repositories {
     mavenCentral()
 }
 dependencies {
     testImplementation(
+            "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "com.codeborne:selenide:6.19.1",
             "com.github.javafaker:javafaker:1.0.2",
