@@ -52,11 +52,14 @@ task simple_test(type: Test) {
         includeTags("simple")
     }
 }
+task faker_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("faker")
+    }
+}
+task pageobject_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("pageobject")
+    }
+}
 
-//}
-//System.setProperty("browser", "chrome")
-//System.getProperty("windowsSize", "1920x1080")
-////String browser = System.getProperty("browser")
-////String windowsSize = System.getProperty("windowsSize")
-//String browser = System.getProperty("browser", "chrome");
-//String windowsize = System.getProperty("windowSize", "1920x1080");
