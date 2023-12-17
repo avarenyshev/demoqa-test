@@ -21,6 +21,7 @@ public class RegistrationWithFakerTests extends TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
+        Attach.addVideo();
     }
     @Test
     @DisplayName("Проверка формы регистрации")
