@@ -59,7 +59,7 @@ tasks.withType(Test) {
 //}
 task pageobject_test(type: Test) {
     useJUnitPlatform {
-        includeTags("pageobject")
+        includeTags("simple")
     }
 }
 
