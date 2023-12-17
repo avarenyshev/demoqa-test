@@ -52,14 +52,15 @@ tasks.withType(Test) {
 //        includeTags("simple")
 //    }
 //}
-//task faker_test(type: Test) {
-//    useJUnitPlatform {
-//        includeTags("faker")
-//    }
-//}
-task simple_test(type: Test) {
+task faker_test(type: Test) {
     useJUnitPlatform {
-        includeTags("simple")
+        includeTags("faker")
     }
-}
+//}
+//    task simple_test(type: Test) {
+//        useJUnitPlatform {
+//            includeTags("simple")
+//        }
+//    }
 
+}
