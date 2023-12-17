@@ -1,6 +1,8 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -22,6 +24,7 @@ class FillFormTests {
 
     @Test
     void fillFormTests() {
+//        SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открывваем страницу demoqa", () -> {
                     open("https://demoqa.com/automation-practice-form");
                     executeJavaScript("$('#fixedban').remove()");
