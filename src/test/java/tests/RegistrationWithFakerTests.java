@@ -1,6 +1,8 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import helpers.Attach;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -9,13 +11,15 @@ import pages.RegistationPage;
 import static io.qameta.allure.Allure.step;
 
 @Tag("faker")
-
 public class RegistrationWithFakerTests extends TestBase {
 
     RegistationPage registationPage = new RegistationPage();
     TestData testData = new TestData();
     Faker faker = new Faker();
-
+    @AfterEach
+    void addAttacments() {
+        Attach.screenshotAs("Last screenshot");
+    }
     @Test
     @DisplayName("Проверка формы регистрации")
     void fillFormTests() {
