@@ -1,11 +1,9 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import helpers.Attach;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import pages.RegistationPage;
 
 import static io.qameta.allure.Allure.step;
@@ -23,6 +21,7 @@ public class RegistrationWithFakerTests extends TestBase {
         Attach.browserConsoleLogs();
         Attach.addVideo();
     }
+
     @Test
     @DisplayName("Проверка формы регистрации")
     void fillFormTests() {
