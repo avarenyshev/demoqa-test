@@ -6,6 +6,7 @@ import helpers.Attach;
 import org.junit.jupiter.api.*;
 import pages.RegistationPage;
 
+import static com.codeborne.selenide.logevents.SelenideLogger.step;
 import static io.qameta.allure.Allure.step;
 
 @Tag("faker")
