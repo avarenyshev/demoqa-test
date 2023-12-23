@@ -6,7 +6,7 @@ import helpers.Attach;
 import org.junit.jupiter.api.*;
 import pages.RegistationPage;
 import static io.qameta.allure.Allure.step;
-import static com.codeborne.selenide.logevents.SelenideLogger.step;
+//import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 
 @Tag("faker")
@@ -26,10 +26,10 @@ public class RegistrationWithFakerTests extends TestBase {
     @Test
     @DisplayName("Проверка формы регистрации")
     void fillFormTests() {
-        step("Открывваем страницу demoqa", () -> {
+        step("Open page demoqa", () -> {
             registationPage.openPage();
         });
-        step("Заполняем форму", () -> {
+        step("Fill form", () -> {
             registationPage.setFirstName(testData.firstName)
                     .setLastName(testData.lastName)
                     .setUserEmail(testData.userEmail)
@@ -44,7 +44,7 @@ public class RegistrationWithFakerTests extends TestBase {
                     .pressEnter();
         });
         //check
-        step("Проверка введенных данных", () -> {
+        step("Verify model ", () -> {
             registationPage.checkResult("Student Name", testData.firstName + " " + testData.lastName)
                     .checkResult("Student Email", testData.userEmail)
                     .checkResult("Gender", testData.genderRandom)
@@ -61,10 +61,10 @@ public class RegistrationWithFakerTests extends TestBase {
     @Test
     @DisplayName("Проверка регистрации с минимальными данными")
     void minDateInput() {
-        step("Открывваем страницу demoqa", () -> {
+        step("Open page demoqa", () -> {
             registationPage.openPage();
         });
-        step("Заполняем форму минимальным объёмом данных", () -> {
+        step("Fill minimal value form", () -> {
             registationPage.setFirstName(testData.firstName)
                     .setLastName(testData.lastName)
                     .setGender(testData.genderRandom)
@@ -73,7 +73,7 @@ public class RegistrationWithFakerTests extends TestBase {
                     .pressEnter();
         });
 //check
-        step("Проверка введенных данных", () -> {
+        step("Verify model", () -> {
             registationPage.checkResult("Student Name", testData.firstName + " " + testData.lastName)
                     .checkResult("Gender", testData.genderRandom)
                     .checkResult("Mobile", testData.userNumber)
