@@ -5,8 +5,9 @@ import com.github.javafaker.Faker;
 import helpers.Attach;
 import org.junit.jupiter.api.*;
 import pages.RegistationPage;
-
 import static io.qameta.allure.Allure.step;
+import static com.codeborne.selenide.logevents.SelenideLogger.step;
+
 
 @Tag("faker")
 public class RegistrationWithFakerTests extends TestBase {
