@@ -1,0 +1,17 @@
+{
+  "base": {
+    "project": "example_task_demoqa-test",
+    "environment": "qa.guru",
+    "comment": "must see here @alex_marakas ",
+    "reportLink": "https://jenkins.autotests.cloud/job/example_task_demoqa-test/allure/",
+    "language": "en",
+    "messenger": "telegram",
+    "allureFolder": "build/allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6761796856:AAHr5OQCQF6L7x-ulYRM_G4JM8TouNjDcE8",
+    "chat": "1001920440945",
+    "replyTo": ""
+  }
+}
