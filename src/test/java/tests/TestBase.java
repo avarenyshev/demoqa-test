@@ -25,8 +25,5 @@ public class TestBase {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
-//        https://demoqa.com
-//https://user1:1234@selenoid.autotests.cloud/wd/hub
-
     }
 }
